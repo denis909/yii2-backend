@@ -1,12 +1,12 @@
 <?php
 
-namespace denis909\yii\backend;
+namespace denis909\yii\backend\components;
 
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use Yii;
 
-class Controller extends \yii\web\Controller
+class BackendController extends \yii\web\Controller
 {
 
     public $userComponent = 'user';

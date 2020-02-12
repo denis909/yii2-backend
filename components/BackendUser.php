@@ -1,10 +1,8 @@
 <?php
 
-namespace denis909\yii\backend;
+namespace denis909\yii\backend\components;
 
-//use backend\models\BackendUser;
-
-class WebUser extends \yii\web\User
+class BackendUser extends \yii\web\User
 {
 
     public $returnUrlParam = '__backendReturnUrl';
@@ -18,8 +16,6 @@ class WebUser extends \yii\web\User
     public $identityCookie = ['name' => '_backendIdentity', 'httpOnly' => true];
 
     public $loginUrl = ['login/index'];
-
-    //public $identityClass;
 
     public $enableAutoLogin = true;
 
