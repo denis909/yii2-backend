@@ -2,7 +2,7 @@
 
 namespace denis909\yii\backend\components;
 
-class BackendUser extends \yii\web\User
+class User extends \yii\web\User
 {
 
     public $returnUrlParam = '__backendReturnUrl';

@@ -6,7 +6,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use Yii;
 
-class BackendController extends \yii\web\Controller
+class Controller extends \yii\web\Controller
 {
 
     public $userComponent = 'user';
