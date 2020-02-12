@@ -1,10 +1,8 @@
 <?php
 
-namespace backend\forms;
+namespace denis909\yii\backend\forms;
 
 use Yii;
-use backend\models\BackendUser;
-
 /**
  * Login form
  */
@@ -63,7 +61,7 @@ class BackendLoginForm extends \yii\base\Model
     {
         if ($this->validate())
         {
-            return Yii::$app->backendUser->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
         }
         
         return false;
@@ -78,7 +76,9 @@ class BackendLoginForm extends \yii\base\Model
     {
         if ($this->_user === null)
         {
-            $this->_user = BackendUser::findByUsername($this->username);
+            $class = Yii::$app->user->identityClass;
+
+            $this->_user = $class::findByUsername($this->username);
         }
 
         return $this->_user;

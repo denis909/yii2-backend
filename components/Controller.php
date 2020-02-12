@@ -13,7 +13,7 @@ class Controller extends \yii\web\Controller
 
     public $postActions = [];
 
-    public $layout = 'main';
+    public $layout = '/main';
 
     public $roles = ['@'];
 
