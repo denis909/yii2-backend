@@ -13,9 +13,9 @@ class User extends \yii\web\User
 
     public $idParam = '__backendId';
 
-    public $identityCookie = ['name' => '_backendIdentity', 'httpOnly' => true];
+    public $identityCookie = ['name' => '_identity-backend', 'httpOnly' => true];
 
-    public $loginUrl = ['login/index'];
+    public $loginUrl = ['site/login'];
 
     public $enableAutoLogin = true;
 
