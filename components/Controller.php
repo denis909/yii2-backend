@@ -9,7 +9,7 @@ use Yii;
 class Controller extends \yii\web\Controller
 {
 
-    public $userComponent = 'backendUser';
+    public $userComponent = 'user';
 
     public $postActions = [];
 
