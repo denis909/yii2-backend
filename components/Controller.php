@@ -2,6 +2,7 @@
 
 namespace denis909\yii\backend\components;
 
+use yii\helpers\Url;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use Yii;
@@ -56,6 +57,23 @@ class Controller extends \yii\web\Controller
     public function goBack($defaultUrl = null)
     {
         return Yii::$app->getResponse()->redirect(Yii::$app->{$this->userComponent}->getReturnUrl($defaultUrl));
-    }    
+    }
+
+    protected function redirectBack($defaultUrl = null)
+    {   
+        $returnUrl = Yii::$app->request->get('returnUrl');
+
+        if ($returnUrl && Url::isRelative($returnUrl))
+        {
+            return $this->redirect($returnUrl);
+        }
+
+        if ($defaultUrl === null)
+        {
+            $defaultUrl = [$this->defaultAction];
+        }  
+    
+        return $this->redirect($defaultUrl);
+    }
 
 }
