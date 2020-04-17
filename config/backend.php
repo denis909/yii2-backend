@@ -1,12 +1,8 @@
 <?php
 
 return [
-    'components' => [
-        'urlManager' => [
-            'rules' => [
-                'site/login' => 'backend/login/index',
-                'site/logout' => 'backend/logout/index'
-            ]
-        ]
+    'controllerMap' => [
+        'login' => 'denis909\yii\backend\controllers\LoginController',
+        'logout' => 'denis909\yii\backend\controllers\LogoutController'
     ]
 ];

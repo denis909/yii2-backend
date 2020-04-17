@@ -1,6 +1,6 @@
 <?php
 
-namespace denis909\yii\backend\forms;
+namespace denis909\yii\backend;
 
 use Yii;
 /**
@@ -9,11 +9,15 @@ use Yii;
 class BackendLoginForm extends \yii\base\Model
 {
 
+    const REMEMBER_TIME = 3600 * 24 * 30;
+
     public $username;
     
     public $password;
     
     public $rememberMe = true;
+
+    protected $userComponent = 'user';
 
     private $_user;
 
@@ -23,11 +27,8 @@ class BackendLoginForm extends \yii\base\Model
     public function rules()
     {
         return [
-            // username and password are both required
             [['username', 'password'], 'required'],
-            // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
-            // password is validated by validatePassword()
             ['password', 'validatePassword']
         ];
     }
@@ -47,7 +48,7 @@ class BackendLoginForm extends \yii\base\Model
             
             if (!$user || !$user->validatePassword($this->password))
             {
-                $this->addError($attribute, 'Incorrect username or password.');
+                $this->addError($attribute, Yii::t('backend', 'Incorrect username or password.'));
             }
         }
     }
@@ -61,7 +62,7 @@ class BackendLoginForm extends \yii\base\Model
     {
         if ($this->validate())
         {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
+            return Yii::$app->{$this->userComponent}->login($this->getUser(), $this->rememberMe ? $this->rememberTime : 0);
         }
         
         return false;
@@ -76,12 +77,27 @@ class BackendLoginForm extends \yii\base\Model
     {
         if ($this->_user === null)
         {
-            $class = Yii::$app->user->identityClass;
+            $class = Yii::$app->{$this->userComponent}->identityClass;
 
             $this->_user = $class::findByUsername($this->username);
         }
 
         return $this->_user;
+    }
+
+    public function getUserComponent() : string
+    {
+        return $this->userComponent;
+    }
+
+    public function setUserComponent(string $userComponent)
+    {
+        $this->userComponent = $userComponent;
+    }
+
+    public function getRememberTime()
+    {
+        return static::REMEMBER_TIME;
     }
 
 }

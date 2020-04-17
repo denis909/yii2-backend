@@ -3,12 +3,10 @@
 namespace denis909\yii\backend\controllers;
 
 use Yii;
-use denis909\yii\backend\forms\BackendLoginForm;
+use denis909\yii\backend\BackendLoginForm;
 
 class LoginController extends \backend\components\BackendController
 {
-
-    const BACKEND_LOGIN_FORM = BackendLoginForm::class;
 
     public $roles = [];
 
@@ -24,9 +22,9 @@ class LoginController extends \backend\components\BackendController
             return $this->goHome();
         }
 
-        $formClass = static::BACKEND_LOGIN_FORM;
+        $model = new BackendLoginForm;
 
-        $model = new $formClass;
+        $model->setUserComponent($this->userComponent);
         
         if ($model->load(Yii::$app->request->post()) && $model->login())
         {

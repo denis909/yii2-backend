@@ -1,12 +1,12 @@
 {
     "name": "denis909/yii2-backend",
     "license": "MIT",
-    "require": {
-        "denis909/cascade-filesystem": "*"
-    },
     "autoload": {
         "psr-4": {
             "denis909\\yii\\backend\\": ""
         }
+    },
+    "require": {
+        "denis909/cascade-filesystem": "*"
     }
 }
