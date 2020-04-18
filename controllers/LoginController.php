@@ -38,4 +38,9 @@ class LoginController extends \backend\components\BackendController
         ]);
     }
 
+    public function getViewPath()
+    {
+        return '@vendor/denis909/yii2-backend/views/login';
+    }
+
 }
