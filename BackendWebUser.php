@@ -17,6 +17,8 @@ abstract class BackendWebUser extends \yii\web\User
 
     public $loginUrl = ['site/login'];
 
+    public $logoutUrl = ['site/logout'];
+
     public $enableAutoLogin = true;
 
 }
