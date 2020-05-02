@@ -28,11 +28,14 @@ abstract class BackendCrudController extends BackendController
 
     public $dataProvider = []; 
 
+    public $i18nCategory = 'backend';
+
     public function actions()
     {
         return [
             'index' => [
                 'class' => IndexAction::class,
+                'i18nCategory' => $this->i18nCategory,
                 'modelClass' => $this->modelClass,
                 'searchModelClass' => $this->searchModelClass,
                 'ownerClass' => $this->ownerClass,
@@ -42,6 +45,7 @@ abstract class BackendCrudController extends BackendController
             ],
             'create' => [
                 'class' => CreateAction::class,
+                'i18nCategory' => $this->i18nCategory,
                 'modelClass' => $this->formModelClass,
                 'ownerClass' => $this->ownerClass,
                 'parentId' => $this->parentId,
@@ -49,10 +53,12 @@ abstract class BackendCrudController extends BackendController
             ],
             'update' => [
                 'class' => UpdateAction::class,
+                'i18nCategory' => $this->i18nCategory,
                 'modelClass' => $this->formModelClass
             ],
             'delete' => [
                 'class' => DeleteAction::class,
+                'i18nCategory' => $this->i18nCategory,
                 'modelClass' => $this->modelClass
             ]
         ];
