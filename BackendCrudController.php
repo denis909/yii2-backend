@@ -2,6 +2,11 @@
 
 namespace denis909\yii\backend;
 
+use denis909\yii\IndexAction;
+use denis909\yii\CreateAction;
+use denis909\yii\UpdateAction;
+use denis909\yii\DeleteAction;
+
 abstract class BackendCrudController extends BackendController
 {
 
@@ -27,7 +32,7 @@ abstract class BackendCrudController extends BackendController
     {
         return [
             'index' => [
-                'class' => IndexAction::className(),
+                'class' => IndexAction::class,
                 'modelClass' => $this->modelClass,
                 'searchModelClass' => $this->searchModelClass,
                 'ownerClass' => $this->ownerClass,
@@ -36,18 +41,18 @@ abstract class BackendCrudController extends BackendController
                 'ownerIndex' => $this->ownerIndex
             ],
             'create' => [
-                'class' => CreateAction::className(),
+                'class' => CreateAction::class,
                 'modelClass' => $this->formModelClass,
                 'ownerClass' => $this->ownerClass,
                 'parentId' => $this->parentId,
                 'ownerIndex' => $this->ownerIndex
             ],
             'update' => [
-                'class' => UpdateAction::className(),
+                'class' => UpdateAction::class,
                 'modelClass' => $this->formModelClass
             ],
             'delete' => [
-                'class' => DeleteAction::className(),
+                'class' => DeleteAction::class,
                 'modelClass' => $this->modelClass
             ]
         ];
