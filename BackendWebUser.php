@@ -1,6 +1,6 @@
 <?php
 
-namespace denis909\yii\backend;
+namespace denis909\backend;
 
 abstract class BackendWebUser extends \yii\web\User
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace denis909\yii\backend\controllers;
+namespace denis909\yii\controllers;
 
 use Yii;
 use denis909\yii\backend\BackendLoginForm;

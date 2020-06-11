@@ -1,6 +1,6 @@
 <?php
 
-namespace denis909\yii\backend;
+namespace denis909\backend;
 
 use denis909\yii\IndexAction;
 use denis909\yii\CreateAction;

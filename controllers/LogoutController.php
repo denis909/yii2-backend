@@ -1,6 +1,6 @@
 <?php
 
-namespace denis909\yii\backend\controllers;
+namespace denis909\backend\controllers;
 
 use Yii;
 

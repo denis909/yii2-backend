@@ -2,7 +2,7 @@
 
 return [
     'controllerMap' => [
-        'login' => 'denis909\yii\backend\controllers\LoginController',
-        'logout' => 'denis909\yii\backend\controllers\LogoutController'
+        'login' => 'denis909\backend\controllers\LoginController',
+        'logout' => 'denis909\backend\controllers\LogoutController'
     ]
 ];

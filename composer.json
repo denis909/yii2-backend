@@ -3,11 +3,12 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "denis909\\yii\\backend\\": ""
+            "denis909\\backend\\": ""
         }
     },
     "require": {
         "denis909/cascade-filesystem": "*",
-        "denis909/yii2-crud": "*"
+        "denis909/yii2-crud": "*",
+        "denis909/yii2-controller" : "*"
     }
 }
