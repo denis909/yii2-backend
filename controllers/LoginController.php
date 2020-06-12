@@ -1,12 +1,14 @@
 <?php
 
-namespace denis909\yii\controllers;
+namespace denis909\backend\controllers;
 
 use Yii;
-use denis909\yii\backend\BackendLoginForm;
+use denis909\backend\BackendLoginForm;
 
 class LoginController extends \backend\components\BackendController
 {
+
+    public $layout = 'login';
 
     public $roles = [];
 
