@@ -78,4 +78,13 @@ class BackendLoginForm extends \yii\base\Model
         return static::REMEMBER_TIME;
     }
 
+    public function attributeLabels()
+    {
+        return [
+            'username' => Yii::t('backend', 'Username'),
+            'password' => Yii::t('backend', 'Password'),
+            'rememberMe' => Yii::t('backend', 'Remember Me')
+        ];
+    }
+
 }
