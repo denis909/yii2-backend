@@ -9,4 +9,6 @@ abstract class BackendController extends \denis909\yii\Controller
 
     public $roles = ['@'];
 
+    public $i18nCategory = 'backend';
+
 }

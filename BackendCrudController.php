@@ -9,4 +9,6 @@ abstract class BackendCrudController extends \denis909\yii\CrudController
 
     public $roles = ['@'];
 
+    public $i18nCategory = 'backend';
+
 }
